@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.1 )
 
 include(cmake/version.cmake)
 
-project( bflib VERSION ${VER_STRING} LANGUAGES C )
+project( bflib VERSION ${VER_STRING} LANGUAGES CXX C )
 set(PROJECT_DESCRIPTION "Bullfrog Engine Emulation Library - for use to remake
 classic games like Syndicate Wars, Magic Carpet or Dungeon Keeper.")
 set(TARGET_NAME bullfrog)
@@ -14,13 +14,11 @@ if( NOT CMAKE_BUILD_TYPE )
 	set( CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE )
 endif()
 
-set( CMAKE_C_STANDARD 99 )
-set( CMAKE_C_STANDARD_REQUIRED ON )
-
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-switch" )
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pedantic" )
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wextra" )
-set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror-implicit-function-declaration -Wno-conversion -Wno-traditional-conversion -Wno-sign-compare" )
+set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-conversion -Wno-sign-compare" )
+set( CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS}" )
 
 # Add Math::Math
 include(cmake/FindMath.cmake)

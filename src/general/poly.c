@@ -51,6 +51,7 @@ const s32 add_to_edi[] = {
 int poly_line_UNUSED()
 {
 // code at 0001:000e5adf
+   return Lb_FAIL;
 }
 
 /** Triangle rendering function.

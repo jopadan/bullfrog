@@ -30,6 +30,14 @@ extern "C" {
 
 #pragma pack(1)
 
+enum RenderingStartType {
+    RendStart_NO = 0,
+    RendStart_LL,
+    RendStart_RL,
+    RendStart_FB,
+    RendStart_FT,
+};
+
 enum RenderingVectorMode {
     RendVec_mode00 = 0,
     RendVec_mode01,
@@ -59,6 +67,7 @@ enum RenderingVectorMode {
     RendVec_mode25,
     RendVec_mode26,
 };
+
 
 struct PolyPoint { // sizeof=20
     s32 X; //< offset=0, Horizonal coordinate within screen buffer
