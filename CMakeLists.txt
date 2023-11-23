@@ -25,8 +25,8 @@ set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror-implicit-function-declaration -Wno-
 # Add Math::Math
 include(cmake/FindMath.cmake)
 
-file( GLOB_RECURSE c_files ${CMAKE_CURRENT_SOURCE_DIR}/src/bullfrog/*.c)
-file( GLOB_RECURSE h_files ${CMAKE_CURRENT_SOURCE_DIR}/src/bullfrog/*.h)
+file( GLOB_RECURSE c_files ${CMAKE_CURRENT_SOURCE_DIR}/src/*)
+file( GLOB_RECURSE h_files ${CMAKE_CURRENT_SOURCE_DIR}/include/bullfrog/*)
 
 if( NOT ${TARGET_NAME}_TYPE )
     ## build library as shared by default

@@ -282,7 +282,7 @@ s32 LbTextStringPartWidth(const char *text, s32 part)
 
 s32 LbTextStringWidth(const char *text)
 {
-    return LbTextStringPartWidth(text, LONG_MAX);
+    return LbTextStringPartWidth(text, INT_MAX);
 }
 
 
