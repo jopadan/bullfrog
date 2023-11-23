@@ -1,0 +1,9 @@
+[submodule "include/findfirst"]
+	path = include/findfirst
+	url = http://github.com/MathieuTurcotte/findfirst
+[submodule "original/keeperfx"]
+	path = original/keeperfx
+	url = http://github.com/dkfans/keeperfx
+[submodule "original/swars"]
+	path = original/swars
+	url = http://github.com/swfans/swars

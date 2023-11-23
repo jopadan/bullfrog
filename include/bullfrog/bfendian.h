@@ -1,0 +1,99 @@
+/******************************************************************************/
+// Bullfrog Engine Emulation Library - for use to remake classic games like
+// Syndicate Wars, Magic Carpet, Genewars or Dungeon Keeper.
+/******************************************************************************/
+/** @file bfendian.h
+ *     Header file for gendian.c.
+ * @par Purpose:
+ *     Integer endianness convert function, and bit setting.
+ * @par Comment:
+ *     None.
+ * @author   Tomasz Lis
+ * @date     12 Nov 2008 - 05 Nov 2021
+ * @par  Copying and copyrights:
+ *     This program is free software; you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation; either version 2 of the License, or
+ *     (at your option) any later version.
+ */
+/******************************************************************************/
+#ifndef BFLIBRARY_BFENDIAN_H_
+#define BFLIBRARY_BFENDIAN_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "bftypes.h"
+
+/** Return the big-endian s32word at p.
+ */
+u32 blong(unsigned char *p);
+
+/** Return the little-endian s32word at p.
+ */
+u32 llong(unsigned char *p);
+
+/** Return the big-endian word at p.
+ */
+u32 bword(unsigned char *p);
+
+/* Return the little-endian word at p.
+ */
+u32 lword(unsigned char *p);
+
+/**
+ * Toggles a masked bit in the flags field to the value.
+ * This version assumes the flag field is 1 byte s32.
+ * @param flags Pointer to the flags byte.
+ * @param mask Bitmask for the flag.
+ */
+void toggle_flag_byte(unsigned char *flags, unsigned char mask);
+
+/**
+ * Toggles a masked bit in the flags field to the value.
+ * This version assumes the flag field is 4 bytes s32.
+ * @param flags Pointer to the flags byte.
+ * @param mask Bitmask for the flag.
+ */
+void toggle_flag_dword(u32 *flags, u32 mask);
+
+/**
+ * Sets a masked bit in the flags field to the value.
+ * This version assumes the flag field is 2 bytes s32.
+ * @param flags Pointer to the flags byte.
+ * @param mask Bitmask for the flag.
+ * @param value The new logic value.
+ */
+void set_flag_word(unsigned short *flags, unsigned short mask, short value);
+
+/**
+ * Sets a masked bit in the flags field to the value.
+ * This version assumes the flag field is 1 byte s32.
+ * @param flags Pointer to the flags byte.
+ * @param mask Bitmask for the flag.
+ * @param value The new logic value.
+ */
+void set_flag_byte(unsigned char *flags, unsigned char mask, short value);
+
+/**
+ * Sets a masked bit in the flags field to the value.
+ * This version assumes the flag field is 4 bytes s32.
+ * @param flags Pointer to the flags byte.
+ * @param mask Bitmask for the flag.
+ * @param value The new logic value.
+ */
+void set_flag_dword(u32 *flags, u32 mask, short value);
+
+/**
+ * Returns the amount of bits set in given integer.
+ * @param i The integer which bits are to be counted.
+ */
+int number_of_set_bits(u32 i);
+
+#ifdef __cplusplus
+};
+#endif
+
+#endif // BFLIBRARY_BFENDIAN_H_
+/******************************************************************************/
